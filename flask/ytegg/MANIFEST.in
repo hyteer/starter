@@ -1,0 +1,3 @@
+graft ytegg/templates
+graft ytegg/static
+include ytegg/schema.sql
