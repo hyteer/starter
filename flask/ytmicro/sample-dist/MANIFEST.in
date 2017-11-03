@@ -1,0 +1,3 @@
+graft message/templates
+graft message/static
+include message/schema.sql

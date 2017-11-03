@@ -1,0 +1,29 @@
+<head>socketio test</head>
+<script type="text/javascript" src="../static/socket.io.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+    var socket = io.connect('http://' + 'localhost' + ':' + '5000');
+    var socket2 = io.connect('http://' + 'localhost' + ':' + '5000' +'/test');
+    socket.on('connect', function() {
+        console.log('connected...')
+        //socket.emit('test', 'im connected...');
+    });
+    socket.on('system', function(msg) {
+        console.log('system:'+msg)
+    });
+    socket.on('message', function(msg) {
+        console.log('server:'+msg)
+    });
+    socket.on('test', function(data) {
+        console.log('server:'+data.msg)
+    });
+
+    // namespace test
+    socket2.on('system', function(msg) {
+        console.log(msg)
+        //console.log('connected /test ...')
+        //socket.emit('test', 'im connected...');
+    });
+    socket2.on('test', function(data) {
+        console.log('server:'+data)
+    });
+</script>

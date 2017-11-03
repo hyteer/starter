@@ -1,0 +1,12 @@
+<html>
+      <body>
+        <h3>task list</h3>
+        <ul>
+          {% for task in tasks: %}
+          <li>
+          {{task.title}} {{task.description}}, status: {{task.done}}
+          </li>
+          {% endfor %}
+        </ul>
+      </body>
+</html>
